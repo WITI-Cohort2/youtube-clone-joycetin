@@ -1,0 +1,414 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+  <!-- CSS File -->
+  <link rel="stylesheet" href="youtube.css" />
+  <title>Youtube Clone with HTML & CSS</title>
+</head>
+
+<body>
+  <!-- the nav bar -->
+  <h1 class="h1">
+    <div class="logo left">
+      <i id="menu" class="material-icons">menu</i>
+      <img src="https://www.freecodecamp.org/news/content/images/2022/01/yt-logo.png">
+    </div>
+
+    <div class="search center">
+      <form action="">
+        <input type="text" placeholder="Search" />
+        <i class="material-icons" id="sea">search</i>
+      </form>
+      <i class="material-icons mic">mic</i>
+    </div>
+
+    <div class="icons right">
+      <i class="material-icons">videocam</i>
+      <i class="material-icons">notifications</i>
+      <i class="material-icons display-this">account_circle</i>
+    </div>
+  </h1>
+  <main>
+    <div class="side-bar">
+      <!-- <div class=”side-bar”> -->
+
+      <div class="nav">
+        <a class="nav-link active">
+          <i class="material-icons">home</i>
+          <span>Home</span>
+        </a>
+      </div>
+      <div class=”side-bar”>
+        <div class="nav">
+          <a class="nav-link">
+            <i class="material-icons">local_fire_department</i>
+            <span>Trending</span>
+          </a>
+          <a  id="ge" class="nav-link">
+            <img id="g" src="data:image/png;base64,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" alt="">
+          <h1 id="h">Explore</h1>
+          </a>
+          <a class="nav-link">
+            <i class="material-icons">subscriptions</i>
+            <span>Subscriptions</span>
+          </a>
+        </div>
+        <hr>
+        <!-- <div class="nav">
+     hr -->
+        <a class="nav-link">
+          <i class="material-icons">library_add_check</i>
+          <span>Library</span>
+        </a>
+        <a class="nav-link">
+          <i class="material-icons">history</i>
+          <span>History</span>
+        </a>
+        <a class="nav-link">
+          <i class="material-icons">play_arrow</i>
+          <span>Your Videos</span>
+        </a>
+        <a class="nav-link">
+          <i class="material-icons">watch_later</i>
+          <span>Watch Later</span>
+        </a>
+        <a class="nav-link">
+          <i class="material-icons">thumb_up</i>
+          <span>Liked Videos</span>
+        </a>
+        <hr>
+        <div id="sub">
+          <h2 id="sst">SUBSCIPTIONS</h2>
+          <a href="x" id="x">
+            <img
+              src="https://yt3.ggpht.com/ytc/AMLnZu_BKqB2PoeSWfQf4m6L28hangFTC2FAOj0dw9fBTA=s176-c-k-c0x00ffffff-no-rj-mo"
+              alt="phaneroo" class="channel-icon">
+            Phaneroo
+          </a>
+          <a href="x" id="x">
+            <img
+              src="https://yt3.ggpht.com/JMGllt4xUCuSBkqd7tUurO4CQUKiU4SR3wMNQEmDskdPv28Jv9eTrfy3mPpeqUFKtYqQZuycrg=s88-c-k-c0x00ffffff-no-rj"
+              alt="Hillsong" class="channel-icon">
+            Hillsongs
+          </a>
+          <a href="x" id="x">
+            <img
+              src="https://yt3.ggpht.com/tkV03Hdg6ZaL_oyOoYuGb90AgZaqxYhFpidZr9l6ctGbKZDmJ5GXL3BpOJXCC2zzq34qnvqc=s88-c-k-c0x00ffffff-no-rj"
+              alt="" class="channel-icon">
+            Gosplematrics
+          </a>
+        </div>
+
+        <!-- </div> -->
+      </div>
+    </div>
+    <div class="content">
+      <div id="nt">
+        <button id="all">All</button>
+        <button>Mixes</button>
+        <button>Music</button>
+        <button>Nollywood</button>
+        <button>worship</button>
+        <button>html</butto>
+        <button> Series </button>
+        <button>Live</buttons>
+        <button>Motivation</button>
+        <button>Sermons</button>
+      </div>
+    
+      <section class="video-section">
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images" src="highschool.png" alt="">
+          <div class="video-bottom">
+            <div id="order">
+            <a href="x">
+              <img src="highschool.png" alt="" class="channel-icon">
+            </a>
+            <div class="video-details">
+              <a href="" class="video-title">Adventure movies</a>
+              <a href="" class="video-channel">The gang</a>
+              <div class="video-metadata">
+                <span>55k views</span>
+                .
+                <span>3 ago</span>
+              </div>
+            </div>
+          </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="hillsongs.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="hillsongs.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Worship</a>
+                <a href="" class="video-channel">Hillsong music</a>
+                <div class="video-metadata">
+                  <span>4.2m views</span>
+                  .
+                  <span>1month ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="jackie.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="jackie.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Personality</a>
+                <a href="https://www.youtube.com/watch?v=23GbnV0k9m4" class="video-channel">Jacky introduces Aron</a>
+                <div class="video-metadata">
+                  <span>15k views</span>
+                  .
+                  <span>3 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="movie.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="movie.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Action</a>
+                <a href="" class="video-channel">Ashan</a>
+                <div class="video-metadata">
+                  <span>15k views</span>
+                  .
+                  <span>1 year ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="python.png"
+            alt="">
+          <div id="order">
+            <a href="x">
+              <img
+                src="python.png"
+                alt="" class="channel-icon">
+            </a>
+            <div class="video-details">
+              <a href="" class="video-title">Python Development</a>
+              <a href="" class="video-channel">Python tutorials</a>
+              <div class="video-metadata">
+                <span>256k views</span>
+                .
+                <span>6 year ago</span>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="nigeria.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+            <a href="x">
+              <img
+                src="nigeria.png"
+                alt="" class="channel-icon">
+            </a>
+            <div class="video-details">
+              <a href="" class="video-title">Nollywood</a>
+              <a href="" class="video-channel">The love you give</a>
+              <div class="video-metadata">
+                <span>999k views</span>
+                .
+                <span>2 year ago</span>
+              </div>
+            </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img id="i1" class="images"
+            src="snp.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="snp.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Hillsong music</a>
+                <a href="" class="video-channel">Who you say i am</a>
+                <div class="video-metadata">
+                  <span>5.4k views</span>
+                  .
+                  <span>3 Weeks ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="nigerian.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="nigerian.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Best of Africa</a>
+                <a href="" class="video-channel">The move</a>
+                <div class="video-metadata">
+                  <span>1k views</span>
+                  .
+                  <span>4 months ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="priscilla.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="priscilla.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">TBN</a>
+                <a href="" class="video-channel">Priscilla</a>
+                <div class="video-metadata">
+                  <span>3k views</span>
+                  .
+                  <span>1 month ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="comp s.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="clone.html"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Computer Science</a>
+                <a href="" class="video-channel">Step by Step</a>
+                <div class="video-metadata">
+                  <span>19k views</span>
+                  .
+                  <span>1 week ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="Screenshot 2022-08-08 090749.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="Screenshot 2022-08-08 090749.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Series</a>
+                <a href="" class="video-channel">Lionheart</a>
+                <div class="video-metadata">
+                  <span>15k views</span>
+                  .
+                  <span>1 year ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article class="video-container">
+          <a href="#" class="video-box" data duration="12:24"></a>
+          <img class="images"
+            src="new movie.png"
+            alt="">
+          <div class="video-bottom">
+            <div id="order">
+              <a href="x">
+                <img
+                  src="new movie.png"
+                  alt="" class="channel-icon">
+              </a>
+              <div class="video-details">
+                <a href="" class="video-title">Series</a>
+                <a href="" class="video-channel">Lionheart</a>
+                <div class="video-metadata">
+                  <span>15k views</span>
+                  .
+                  <span>1 year ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+  <!-- Main Body Ends -->
+</body>
+
+</html>
